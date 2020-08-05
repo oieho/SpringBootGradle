@@ -5,4 +5,3 @@
 /build/classes/java/test/
 application-oauth.properties
 application-real-db.properties
-.travis.yml
