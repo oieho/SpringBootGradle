@@ -2,9 +2,20 @@ language: java
 jdk:
   - openjdk8
 
+before_install:
+- chmod +x gradlew
+
 branches:
   only:
     - master
+    
+# Travis CI 서버의 Home
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
+
+script: "./gradlew clean build"
 
 before_deploy:
 - zip -r springboot *
@@ -16,25 +27,14 @@ deploy:
  access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
  secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
  
-bucket: springbootgradlebucket
-region: ap-northeast-2
-skip_cleanup: true
-acl: private # zip 파일 접근을 private로
-local_dir : deploy # before_deploy에서 생성한 디렉토리
-wait-until-deployed: true
+ bucket: springbootgradlebucket
+ region: ap-northeast-2
+ skip_cleanup: true
+ acl: private # zip 파일 접근을 private로
+ local_dir : deploy # before_deploy에서 생성한 디렉토리
+ wait-until-deployed: true
 
-before_install:
-- chmod +x gradlew
-
-# Travis CI 서버의 Home
-cache:
-  directories:
-    - '$HOME/.m2/repository'
-    - '$HOME/.gradle'
-
-script: "./gradlew clean build"
-
-# CI 실행 완료 시 메일로 알람
+# CI 실행 완료 시 메일로 알람~
 notifications:
   email:
     recipients:
