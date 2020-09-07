@@ -18,9 +18,9 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
- - zip -r abcSpring *
- - mkdir -p deploy
- - mv abcSpring.zip deploy/abcSpring.zip
+  - zip -r abcSpring *
+  - mkdir -p deploy
+  - mv abcSpring.zip deploy/abcSpring.zip
 
 deploy:
   - provider: s3
