@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPOSITORY=/home/ec2-user/app/step2
-PROJECT_NAME=abcSprings
+PROJECT_NAME=abcSpring
 
 echo "> Build 파일 복사"
 
