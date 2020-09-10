@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ProfileControllerTest {
@@ -22,8 +23,9 @@ public class ProfileControllerTest {
     private TestRestTemplate restTemplate;
 
     @Test
-    public void callProfileWithoutConfiguration () throws Exception {
+    public void profile은_인증없이_호출된다() throws Exception {
         String expected = "default";
+
         ResponseEntity<String> response = restTemplate.getForEntity("/profile", String.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(response.getBody()).isEqualTo(expected);

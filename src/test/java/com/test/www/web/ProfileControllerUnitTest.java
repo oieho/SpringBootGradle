@@ -16,7 +16,7 @@ public class ProfileControllerUnitTest {
         env.addActiveProfile("oauth");
         env.addActiveProfile("real-db");
 
-        ProfileController controller = new ProfileController(env);
+        ProfileController2 controller = new ProfileController2(env);
 
         //when
         String profile = controller.profile();
@@ -26,14 +26,14 @@ public class ProfileControllerUnitTest {
     }
 
     @Test
-    public void inquireFirstIfRealProfile () {
+    public void inquireFirstIfRealProfile() {
         //given
         String expectedProfile = "oauth";
         MockEnvironment env = new MockEnvironment();
         env.addActiveProfile(expectedProfile);
         env.addActiveProfile("real-db");
 
-        ProfileController controller = new ProfileController(env);
+        ProfileController2 controller = new ProfileController2(env);
 
         //when
         String profile = controller.profile();
@@ -43,11 +43,11 @@ public class ProfileControllerUnitTest {
     }
 
     @Test
-    public void inquireDefaultIfActiveProfile () {
+    public void inquireDefaultIfActiveProfile() {
         //given
         String expectedProfile = "default";
         MockEnvironment env = new MockEnvironment();
-        ProfileController controller = new ProfileController(env);
+        ProfileController2 controller = new ProfileController2(env);
 
         //when
         String profile = controller.profile();
