@@ -53,6 +53,6 @@ dependencies {
     compile ('org.springframework.boot:spring-boot-starter-data-rest')
     compile ('org.springframework.boot:spring-boot-starter-batch')
     compile ('org.springframework.boot:spring-boot-devtools')
-    testCompile ('org.springframework.boot:spring-boot-starter-test')
     testCompile ('org.springframework.security:spring-security-test')
+    testCompile ('org.springframework.boot:spring-boot-starter-test')
 }
