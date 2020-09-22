@@ -1,14 +1,14 @@
 #! /usr/bin/env bash
 
 ABSPATH=$(readlink -f $0)
-ABSDIR$(dirname $ABSPATH)
+ABSDIR=$(dirname $ABSPATH)
 source ${ABSDIR}/profile.sh
 
 REPOSITORY=/home/ec2-user/app/step3
 PROJECT_NAME=GradlePractice
 
 echo "> Build 파일 복사"
-echo "> cp $REPOSITORY/zip/*.jar $REPOSITORY"
+echo "> cp $REPOSITORY/zip/*.jar $REPOSITORY/"
 
 cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
