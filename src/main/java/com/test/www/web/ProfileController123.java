@@ -10,7 +10,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-public class ProfileController {
+public class ProfileController123 {
     private final Environment env;
 
     @GetMapping("/profile")
